@@ -17,3 +17,8 @@ if [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
 fi
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
+export FZF_DEFAULT_COMMAND='rg --files'
+
+eval `ssh-agent -s`
