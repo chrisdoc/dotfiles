@@ -1,7 +1,9 @@
-" Use the Solarized Dark theme
-set background=dark
-colorscheme solarized
-let g:solarized_termtrans=1
+call plug#begin('~/.vim/plugged')
+Plug 'arcticicestudio/nord-vim'
+call plug#end()
+
+" nord colorscheme
+colorscheme nord
 
 " Make Vim more useful
 set nocompatible

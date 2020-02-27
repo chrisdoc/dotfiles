@@ -67,5 +67,9 @@ $(brew --prefix)/opt/fzf/install
 # ZSH
 brew install getantibody/tap/antibody
 
+# Keyboard modification
+brew cask install karabiner-elements
+brew install yqrashawn/goku/goku
+
 # Remove outdated versions from the cellar.
 brew cleanup
