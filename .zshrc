@@ -37,4 +37,10 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/Library/Python/3.7/bin:$PATH"
-export PATH"$HOME/dev/flutter/bin:$PATH"
+export PATH="$HOME/dev/flutter/bin:$PATH"
+# The following lines were added by compinstall
+zstyle :compinstall filename '/Users/chrisdoc/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
