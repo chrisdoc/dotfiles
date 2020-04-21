@@ -1,0 +1,21 @@
+{
+	"coc.preferences.formatOnType": true,
+	"coc.preferences.formatOnSaveFiletypes": [
+		"go",
+		"markdown",
+		"javascript",
+		"typescript",
+		"json",
+		"jsonc"
+	],
+	"coc.source.file.ignoreHidden": false,
+	"prettier.eslintIntegration": true,
+	"eslint.enable": false,
+	"eslint.autoFixOnSave": true,
+	"eslint.filetypes": [
+		"javascript",
+		"typescript",
+		"javascriptreact",
+		"typescriptreact"
+	]
+}
