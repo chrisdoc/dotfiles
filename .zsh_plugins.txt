@@ -2,7 +2,8 @@ junegunn/fzf
 mafredri/zsh-async
 zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions
-agkozak/zsh-z
+# agkozak/zsh-z
+ajeetdsouza/zoxide
 
 # These plugins must be last.
 sindresorhus/pure
