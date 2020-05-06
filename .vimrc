@@ -11,7 +11,8 @@ call minpac#add('itchyny/lightline.vim')
 " Fuzzy files
 call minpac#add('junegunn/fzf', { 'do': 'call fzf#install()'})
 call minpac#add('junegunn/fzf.vim')
-
+" Better file reloading on change
+call minpac#add('djoshea/vim-autoread')
 " Javascript Typescript React
 call minpac#add('pangloss/vim-javascript')
 call minpac#add('leafgarland/typescript-vim')
@@ -129,11 +130,6 @@ set showmode
 set title
 " Show the (partial) command as it’s being typed
 set showcmd
-" Use relative line numbers
-if exists("&relativenumber")
-	set relativenumber
-	au BufReadPost * set relativenumber
-endif
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
 " Read files when they change
@@ -163,6 +159,7 @@ if has("autocmd")
 endif
 
 nnoremap <silent> <Leader>, :Files<CR>
+nnoremap <silent> <Leader>b :Buffers<CR>
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
@@ -297,3 +294,8 @@ let g:lightline = {
       \   'gitbranch': 'FugitiveHead'
       \ },
       \ }
+
+" Edit vimr configuration file
+nnoremap <Leader>ve :e $MYVIMRC<CR>
+" " Reload vimr configuration file
+nnoremap <Leader>vr :source $MYVIMRC<CR>
