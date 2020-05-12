@@ -17,6 +17,8 @@ call minpac#add('djoshea/vim-autoread')
 call minpac#add('pangloss/vim-javascript')
 call minpac#add('leafgarland/typescript-vim')
 call minpac#add('peitalin/vim-jsx-typescript')
+" Jenkinsfile
+call minpac#add('martinda/Jenkinsfile-vim-syntax')
 
 " LSP
 let g:coc_global_extensions = [
@@ -99,9 +101,14 @@ syntax on
 " Highlight current line
 set cursorline
 " Make tabs as wide as two spaces
-set tabstop=2
+" tabstop:          Width of tab character 
+" softtabstop:      Fine tunes the amount of white space to be added
+" shiftwidth        Determines the amount of whitespace to add in normal mode
+" expandtab:        When this option is enabled, vi will use spaces instead of tabs
+set tabstop     =2
+set softtabstop =2
+set shiftwidth  =2
 set expandtab
-set shiftwidth=2
 
 " Show “invisible” characters
 set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
