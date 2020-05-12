@@ -62,3 +62,8 @@ export PATH="$HOME/go/bin:$PATH"
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+  
+# use dotfiles as vimrc location
+export MYVIMRC='~/dotfiles/.vimrc'  
+
+neofetch
