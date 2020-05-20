@@ -66,3 +66,5 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # use dotfiles as vimrc location
 export MYVIMRC='~/dotfiles/.vimrc'  
 
+export PATH="/usr/local/opt/texinfo/bin:$PATH"
+
