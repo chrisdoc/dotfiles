@@ -77,27 +77,6 @@ scrolling:
   # scrollback is enabled (history > 0).
   multiplier: 3
 
-  # Faux Scrolling
-  #
-  # The `faux_multiplier` setting controls the number of lines the terminal
-  # should scroll when the alternate screen buffer is active. This is used
-  # to allow mouse scrolling for applications like `man`.
-  #
-  # Specifying `0` will disable faux scrolling.
-  faux_multiplier: 3
-
-  # Scroll to the bottom when new text is written to the terminal.
-  auto_scroll: false
-
-# Spaces per Tab (changes require restart)
-#
-# This setting defines the width of a tab in cells.
-#
-# Some applications, like Emacs, rely on knowing about the width of a tab.
-# To prevent unexpected behavior in these applications, it's also required to
-# change the `it` value in terminfo when altering this setting.
-tabspaces: 4
-
 # Font configuration (changes require restart)
 font:
   # Normal (roman) font face
@@ -713,3 +692,31 @@ key_bindings:
   - { key: NumpadEnter,             chars: "\n"                              }
   - { key: F,  mods: Alt,           chars: "\x1bf"                           }
   - { key: B,  mods: Alt,           chars: "\x1bb"                           }
+
+
+# Colors (ayu_light)
+colors:
+  primary:
+    background: 0xfafafa''
+    foreground: 0x5c6773'
+  cursor:
+    text:   '0x5c6773'
+    cursor: '0xff6a00'
+  normal:
+    black:   ''0x000000
+    red:     '0xff3333''
+    green:   '0x86b300
+    yellow:  '0xf29718'
+    blue:    '0x41a6d9'
+    magenta: ''0xf07178
+    cyan:    '0x4dbf99'
+    white:   '0xffffff'
+  bright:
+    black:   '0x323232''
+    red:     0xff6565'
+    green:   '0xb8e532'
+    yellow:  '0xffc94a''
+    blue:    '0x73d8ff
+    magenta: '0xffa3aa'
+    cyan:    '0x7ff1cb'
+    white:   '0xffffff'''''''''''''''''''''''''''''''''''''''''')

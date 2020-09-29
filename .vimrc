@@ -306,3 +306,6 @@ let g:lightline = {
 nnoremap <Leader>ve :e $MYVIMRC<CR>
 " " Reload vimr configuration file
 nnoremap <Leader>vr :source $MYVIMRC<CR>
+" Colors for Alacritty
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48:2;%lu;%lu;%lum""]>""]>"

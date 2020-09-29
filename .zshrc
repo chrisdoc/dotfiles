@@ -68,3 +68,36 @@ export MYVIMRC='~/dotfiles/.vimrc'
 
 export PATH="/usr/local/opt/texinfo/bin:$PATH"
 
+export PATH="/usr/local/opt/curl/bin:$PATH"
+eval 
+            fuck () {
+                TF_PYTHONIOENCODING=$PYTHONIOENCODING;
+                export TF_SHELL=zsh;
+                export TF_ALIAS=fuck;
+                TF_SHELL_ALIASES=$(alias);
+                export TF_SHELL_ALIASES;
+                TF_HISTORY="$(fc -ln -10)";
+                export TF_HISTORY;
+                export PYTHONIOENCODING=utf-8;
+                TF_CMD=$(
+                    thefuck THEFUCK_ARGUMENT_PLACEHOLDER $@
+                ) && eval $TF_CMD;
+                unset TF_HISTORY;
+                export PYTHONIOENCODING=$TF_PYTHONIOENCODING;
+                test -n "$TF_CMD" && print -s $TF_CMD
+            }
+
+
+# Load the shell dotfiles, and then some:
+# * ~/.path can be used to extend `$PATH`.
+# * ~/.extra can be used for other settings you don’t want to commit.
+for file in ~/.{path,exports,aliases,functions,extra}; do
+	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;        
+if [ -r $(brew --prefix)/opt/mcfly/mcfly.zsh ]; then
+    . $(brew --prefix)/opt/mcfly/mcfly.zsh
+fi
+
+# Prompt
+eval "$(starship init zsh)"
