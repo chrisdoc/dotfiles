@@ -1,4 +1,4 @@
-export LC_ALL=en_GB.UTF-8  
+export LC_ALL=en_GB.UTF-8
 export LANG=en_GB.UTF-8
 
 # HISTORY
@@ -33,7 +33,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/Library/Python/3.7/bin:$PATH"
 export PATH="$HOME/dev/flutter/bin:$PATH"
 # The following lines were added by compinstall
-zstyle :compinstall filename '/Users/chrisdoc/.zshrc'
+zstyle :compinstall filename "$HOME/.zshrc"
 
 autoload -U +X bashcompinit && bashcompinit
 autoload -U +X compinit && compinit
@@ -62,15 +62,14 @@ export PATH="$HOME/go/bin:$PATH"
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-  
+
 # use dotfiles as vimrc location
-export MYVIMRC='~/dotfiles/.vimrc'  
+export MYVIMRC='~/dotfiles/.vimrc'
 
 export PATH="/usr/local/opt/texinfo/bin:$PATH"
 
 export PATH="/usr/local/opt/curl/bin:$PATH"
-eval 
-            fuck () {
+fuck () {
                 TF_PYTHONIOENCODING=$PYTHONIOENCODING;
                 export TF_SHELL=zsh;
                 export TF_ALIAS=fuck;
@@ -85,7 +84,7 @@ eval
                 unset TF_HISTORY;
                 export PYTHONIOENCODING=$TF_PYTHONIOENCODING;
                 test -n "$TF_CMD" && print -s $TF_CMD
-            }
+}
 
 
 # Load the shell dotfiles, and then some:
@@ -94,10 +93,13 @@ eval
 for file in ~/.{path,exports,aliases,functions,extra}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
-unset file;        
+unset file;
 if [ -r $(brew --prefix)/opt/mcfly/mcfly.zsh ]; then
     . $(brew --prefix)/opt/mcfly/mcfly.zsh
 fi
 
 # Prompt
 eval "$(starship init zsh)"
+
+# direnv
+eval "$(direnv hook zsh)"
