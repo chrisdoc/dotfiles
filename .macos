@@ -133,7 +133,7 @@ defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClic
 defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
 
 # Disable “natural” (Lion-style) scrolling
-defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true
 
 # Increase sound quality for Bluetooth headphones/headsets
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
@@ -449,8 +449,8 @@ defaults write com.apple.dock wvous-tl-modifier -int 0
 # Top right screen corner → Desktop
 defaults write com.apple.dock wvous-tr-corner -int 4
 defaults write com.apple.dock wvous-tr-modifier -int 0
-# Bottom left screen corner → Start screen saver
-defaults write com.apple.dock wvous-bl-corner -int 5
+# Bottom left screen corner →  Show application windows
+defaults write com.apple.dock wvous-bl-corner -int 3
 defaults write com.apple.dock wvous-bl-modifier -int 0
 
 ###############################################################################
@@ -946,3 +946,36 @@ for app in "Activity Monitor" \
 	killall "${app}" &> /dev/null
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."
+
+# Powerpoint
+
+COMMAND_KEY="@"
+CONTROL_KEY="^"
+OPTION_KEY="~"
+SHIFT_KEY="\$"
+LEFT_ARROW_KEY="\\U2190"
+RIGHT_ARROW_KEY="\\U2192"
+UP_ARROW_KEY="\\U2191"
+DOWN_ARROW_KEY="\\U2193"
+
+defaults write com.microsoft.Powerpoint NSUserKeyEquivalents -dict-add "\033Insert\033Section" "${COMMAND_KEY}${CONTROL_KEY}S";
+defaults write com.microsoft.Powerpoint NSUserKeyEquivalents -dict-add "\033Insert\033Comment" "${COMMAND_KEY}${CONTROL_KEY}C";
+defaults write com.microsoft.Powerpoint NSUserKeyEquivalents -dict-add "\033Insert\033Table\\U2026" "${COMMAND_KEY}${CONTROL_KEY}T";
+defaults write com.microsoft.Powerpoint NSUserKeyEquivalents -dict-add "\033Insert\033Shape\033Rectangle" "${COMMAND_KEY}${CONTROL_KEY}R";
+defaults write com.microsoft.Powerpoint NSUserKeyEquivalents -dict-add "\033Insert\033Shape\033Triangle" "${COMMAND_KEY}${CONTROL_KEY}${SHIFT_KEY}T";
+defaults write com.microsoft.Powerpoint NSUserKeyEquivalents -dict-add "\033Insert\033Shape\033Oval" "${COMMAND_KEY}${CONTROL_KEY}O";
+defaults write com.microsoft.Powerpoint NSUserKeyEquivalents -dict-add "\033Insert\033Shape\033Line" "${COMMAND_KEY}${CONTROL_KEY}L";
+defaults write com.microsoft.Powerpoint NSUserKeyEquivalents -dict-add "\033Insert\033Icons\\U2026" "${COMMAND_KEY}${CONTROL_KEY}I";
+defaults write com.microsoft.Powerpoint NSUserKeyEquivalents -dict-add "\033Arrange\033Reorder Objects" "${COMMAND_KEY}${CONTROL_KEY}${OPTION_KEY}R";
+defaults write com.microsoft.Powerpoint NSUserKeyEquivalents -dict-add "\033Arrange\033Bring to Front" "${COMMAND_KEY}${CONTROL_KEY}${UP_ARROW_KEY}";
+defaults write com.microsoft.Powerpoint NSUserKeyEquivalents -dict-add "\033Arrange\033Send to Back" "${COMMAND_KEY}${CONTROL_KEY}${DOWN_ARROW_KEY}";
+defaults write com.microsoft.Powerpoint NSUserKeyEquivalents -dict-add "\033Arrange\033Bring Forward" "${COMMAND_KEY}${CONTROL_KEY}${SHIFT_KEY}${UP_ARROW_KEY}";
+defaults write com.microsoft.Powerpoint NSUserKeyEquivalents -dict-add "\033Arrange\033Send Backward" "${COMMAND_KEY}${CONTROL_KEY}${SHIFT_KEY}${DOWN_ARROW_KEY}";
+defaults write com.microsoft.Powerpoint NSUserKeyEquivalents -dict-add "\033Arrange\033Align or Distribute\033Align to Left" "${CONTROL_KEY}${SHIFT_KEY}${LEFT_ARROW_KEY}";
+defaults write com.microsoft.Powerpoint NSUserKeyEquivalents -dict-add "\033Arrange\033Align or Distribute\033Align to Center" "${CONTROL_KEY}${SHIFT_KEY}C";
+defaults write com.microsoft.Powerpoint NSUserKeyEquivalents -dict-add "\033Arrange\033Align or Distribute\033Align to Right" "${CONTROL_KEY}${SHIFT_KEY}${RIGHT_ARROW_KEY}";
+defaults write com.microsoft.Powerpoint NSUserKeyEquivalents -dict-add "\033Arrange\033Align or Distribute\033Align to Top" "${CONTROL_KEY}${SHIFT_KEY}${UP_ARROW_KEY}";
+defaults write com.microsoft.Powerpoint NSUserKeyEquivalents -dict-add "\033Arrange\033Align or Distribute\033Align to Middle" "${CONTROL_KEY}${SHIFT_KEY}M";
+defaults write com.microsoft.Powerpoint NSUserKeyEquivalents -dict-add "\033Arrange\033Align or Distribute\033Align to Bottom" "${CONTROL_KEY}${SHIFT_KEY}${DOWN_ARROW_KEY}";
+defaults write com.microsoft.Powerpoint NSUserKeyEquivalents -dict-add "\033Arrange\033Align or Distribute\033Distribute Horizontally" "${CONTROL_KEY}${SHIFT_KEY}H";
+defaults write com.microsoft.Powerpoint NSUserKeyEquivalents -dict-add "\033Arrange\033Align or Distribute\033Distribute Vertically" "${CONTROL_KEY}${SHIFT_KEY}V";
