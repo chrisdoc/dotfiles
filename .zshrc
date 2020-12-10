@@ -7,8 +7,6 @@ HISTSIZE=100000
 SAVEHIST=$HISTSIZE
 HISTCONTROL=ignoredups:erasedups
 
-export PATH="/usr/local/bin:$PATH"
-
 # NVM
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
@@ -57,18 +55,12 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 
 eval "$(zoxide init zsh)"
 
-
-export PATH="$HOME/go/bin:$PATH"
-
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # use dotfiles as vimrc location
 export MYVIMRC='~/dotfiles/.vimrc'
 
-export PATH="/usr/local/opt/texinfo/bin:$PATH"
-
-export PATH="/usr/local/opt/curl/bin:$PATH"
 fuck () {
                 TF_PYTHONIOENCODING=$PYTHONIOENCODING;
                 export TF_SHELL=zsh;
@@ -85,7 +77,6 @@ fuck () {
                 export PYTHONIOENCODING=$TF_PYTHONIOENCODING;
                 test -n "$TF_CMD" && print -s $TF_CMD
 }
-
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
